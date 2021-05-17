@@ -31,7 +31,30 @@ https://github.com/mqyqingfeng/Blog/issues/8
 
 https://segmentfault.com/a/1190000012646221
 
-- this
+- **this**： **在对象内部的方法中使用对象内部的属性**
+
+  - 通过函数的 call 方法设置
+
+  - 通过对象调用方法设置
+
+  - 通过构造函数中设置
+
+  - 嵌套函数中的 this 不会从外层函数中继承：
+
+    ``` javascript
+    var myObj = {
+      name : " 极客时间 ", 
+      showThis: function(){
+        console.log(this)
+        function bar(){console.log(this)}
+        bar()
+      }
+    }
+    myObj.showThis()
+    // 函数 bar 中的 this 指向的是全局 window 对象，而函数 showThis 中的 this 指向的是 myObj 对象
+    ```
+
+    
 
 ### 闭包(Closure)：
 
@@ -120,3 +143,10 @@ https://segmentfault.com/a/1190000012646221
   ```
 
   链接： https://github.com/mqyqingfeng/Blog/issues/22  讨论区
+
+### 判断类型：
+
+- 基本类型：
+  - typeof：number、string、boolean、object(null)、undefined、function
+  - Object.prototype.toString.call( ) 结果: [object Null]...
+- 判断实例：instanceof、constructor
