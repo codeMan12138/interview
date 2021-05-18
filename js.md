@@ -120,3 +120,6 @@ https://segmentfault.com/a/1190000012646221
   ```
 
   链接： https://github.com/mqyqingfeng/Blog/issues/22  讨论区
+
+### 继承：
+
